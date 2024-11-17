@@ -1,0 +1,226 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal */
+}
+
+/* En-tête */
+header {
+    background-color: #002654;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.secondary-nav {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.secondary-nav a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.secondary-nav a:hover {
+    color: #ffcd00;
+}
+
+/* Navigation principale pour la page d'accueil */
+.homepage-nav {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.homepage-nav a {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #004aad;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.homepage-nav a:hover {
+    background-color: #ffcd00;
+    color: #004aad;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image d'introduction pour la page d'accueil */
+.intro-image {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 90%;
+    /* Réduit la largeur maximale */
+}
+
+.intro-image img {
+    width: 100%;
+    max-height: 450px;
+    /* Limite la hauteur pour éviter un débordement */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenu principal */
+main {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+main h2 {
+    text-align: center;
+    color: #002654;
+    margin-bottom: 1rem;
+}
+
+main p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Section spécifique pour les cartes thématiques ou graphiques */
+figure {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 80%;
+}
+
+figure img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Galerie de cartes pour la page interactive */
+.map-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.map-gallery article {
+    text-align: center;
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-gallery article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.map-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.map-gallery h3 {
+    margin: 1rem 0 0.5rem;
+    color: #002654;
+    font-size: 1.2rem;
+}
+
+.map-gallery p {
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Bouton de retour */
+#return-button {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+}
+
+#return-button button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #004aad;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#return-button button:hover {
+    background-color: #ffcd00;
+    color: #004aad;
+}
+
+/* Cartes en iframe */
+.map-iframe {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 200px);
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pied de page */
+footer {
+    background-color: #002654;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+}

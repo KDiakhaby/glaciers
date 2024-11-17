@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte Interactive - Glaciers en Europe</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="return-button" class="return-container">
+        <button onclick="closeMap()">Retour à la Galerie</button>
+      </div>
+      <h1>Carte Interactive</h1>
+      <nav class="secondary-nav">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Galerie des cartes -->
+      <section id="gallery" class="map-gallery">
+        <article>
+          <button onclick="openMap('map-situation')" class="map-button">
+            <img
+              src="images/Europe.jpg"
+              alt="Les glaciers en Europe (carte de situation)"
+            />
+          </button>
+          <h3>Les glaciers en Europe</h3>
+          <p>Explorez la carte de situation des glaciers en Europe.</p>
+        </article>
+        <article>
+          <button onclick="openMap('map-west')" class="map-button">
+            <img
+              src="images/Europe-ouest.jpg"
+              alt="Les glaciers en Europe de l'Ouest"
+            />
+          </button>
+          <h3>Les glaciers en Europe de l'Ouest</h3>
+          <p>
+            Découvrez les glaciers situés dans la région occidentale de
+            l'Europe.
+          </p>
+        </article>
+      </section>
+
+      <!-- Cartes affichées dans les iframes -->
+      <iframe
+        id="map-situation"
+        class="map-iframe"
+        src="https://map.giscarta.com/viewer/a25eb63d-2888-4f06-88e7-954c940b5d67"
+        title="Carte des glaciers en Europe"
+      ></iframe>
+      <iframe
+        id="map-west"
+        class="map-iframe"
+        src="https://map.giscarta.com/viewer/86a47c76-05da-489b-a73d-d104c9e0edc4"
+        title="Carte des glaciers en Europe de l'Ouest"
+      ></iframe>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Projet Glaciers</p>
+    </footer>
+
+    <script>
+      function openMap(mapId) {
+        document.getElementById("gallery").style.display = "none";
+        document.getElementById("return-button").style.display = "inline-block";
+        document.querySelectorAll(".map-iframe").forEach((iframe) => {
+          iframe.style.display = "none";
+        });
+        document.getElementById(mapId).style.display = "block";
+      }
+
+      function closeMap() {
+        document.getElementById("gallery").style.display = "flex";
+        document.getElementById("return-button").style.display = "none";
+        document.querySelectorAll(".map-iframe").forEach((iframe) => {
+          iframe.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>
